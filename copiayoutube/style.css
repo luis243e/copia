@@ -3,7 +3,72 @@
 :root{
     --icon-size: 24px;
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    height: auto;
+    aspect-ratio: 16/9;
+    border: 1px solid #000000;
+    flex: 1;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.navbar{
+    background-color: black;
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    padding: 12px;
+    height: 60px;
+    width: 100vw;
+}
+
+.navbar input[type="text"] {
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    outline: none;
+}
+
+.btn-menu {
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    gap: 8px;
+    width: 40px;
+    height: 40px;
+}
 .icon-btn {
     width: var(--icon-size);
     height: var(--icon-size);
@@ -19,5 +84,31 @@
 
 .icons-search {
     width: var(--icon-size);
-    height: var(--icon-size);
-}|
+}
+
+.btn-sidebar {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    height: calc(100vh - 60px);
+    width: 200px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .navbar input[type="text"] {
+        width: 100px;
+    }
+}
